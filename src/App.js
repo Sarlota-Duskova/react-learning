@@ -19,7 +19,7 @@ export default function App() {
     <div>
       <Router>
         <Routes>
-          <Route index element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/team/:id" element={<TeamPage />} />
         </Routes>
       </Router>
