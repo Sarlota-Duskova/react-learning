@@ -20,7 +20,7 @@ export default function App() {
     <div>
       <HashRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="" element={<Home />} />
             <Route path="/team/:id" element={<TeamPage />} />
           </Routes>
       </HashRouter>
