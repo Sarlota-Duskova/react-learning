@@ -1,5 +1,6 @@
 /* ------------ Important ------------ */
 import React from 'react'
+import { HashRouter } from 'react-router-dom';
 //import { useState } from 'react';
 
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
@@ -17,12 +18,14 @@ export default function App() {
 
   return (
     <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/team/:id" element={<TeamPage />} />
-        </Routes>
-      </Router>
+      <HashRouter>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/team/:id" element={<TeamPage />} />
+          </Routes>
+        </Router>
+      </HashRouter>
     </div>
   );
 }
