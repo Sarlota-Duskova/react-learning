@@ -1,38 +1,141 @@
-.App {
-  text-align: center;
+/* App.css */
+
+/* Font */
+
+body {
+  font-family: Helvetica; /* Use Helvetica font */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ /* Colors */
+  
+ :root {
+  --dark-blue-color: #1d3557; /* Dark blue */
+  --red-color: #e63946; /* Red */
+  --light-blue-color: #a8dadc; /* Light blue */
+  --light-green-color: #f1faee; /* Light green */
+  --black-color: #000; /* Black */
+  --green-color: #a7c957; /* Light green */
+  --blue-selected: #44aadd; /* Ocean blue */
+  --gray-color: #ccc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app {
+  display: flex; /* Flex container makes two columns */
+  justify-content: space-around; /* Makes spaces between each other */
+  padding: 20px; /* Add padding around */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.column {
+  width: 45%; /* Width of each column */
+  padding: 20px; /* Add padding around */
+  border: 1px solid var(--gray-color); /* Black solid frame around each column */ 
+  border-radius: 8px; /* Set a radius around column*/
+}
+.column-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px; /* Add space under title*/
+  color: var(--dark-blue-color); /* Dark blue */
+}
+
+.input-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 10px; /* Add space under div with input and button */
 }
 
-.App-link {
-  color: #61dafb;
+.input-container input {
+  flex: 1; /* Creates width input and button as column */
+  margin-right: 10px; /* Add space between input and button */
+  padding: 8px; /* Add padding around input field */
+  border: 1px solid var(--gray-color); /* Gray color border */
+  border-radius: 4px; /* Set a radius of input border */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-container button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff; /* Color of text */
+  cursor: pointer; /* Set pointer */
+}
+
+.item-buttons {
+  display: flex;
+  flex-direction: column; /* Make button width as column */
+  margin-top: 10px; /* Add spacing above */
+}
+
+.item-buttons button {
+  height: 40px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Save button */
+#btn-save {
+  background-color: var(--green-color); /* Green */
+}
+
+/* Delete button */
+#btn-delete {
+  background-color: var(--red-color); /* Red */
+}
+
+/* Buttons */
+#btn {
+  background-color: var(--dark-blue-color); /* blue */
+}
+
+.dataLists--box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* The flexbox items are aligned at the start of the cross axis - verticaly, will be aligned vertically at the top */ 
+  border: 1px solid var(--gray-color);
+  border-radius: 8px;
+  padding: 20px; /* Add text away from border */
+  margin-bottom: 20px; /* Add each box from each other */
+}
+
+.dataLists--info {
+  flex-grow: 1; /* Make players boc width */
+}
+
+.dataListsListed--box {
+  padding: 10px;
+}
+
+.dataLists--buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+}
+
+.dataLists--buttons button {
+  width: 110px;
+  height: 40px;
+  margin-top: 5px; /* Add space between buttons */
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dataLists--box:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.dataLists--box.active{
+  border: 2px solid var(--blue-selected); /* Ocean blue */
+} 
+
+.add-button.error {
+  border: 2px solid red;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
 }
