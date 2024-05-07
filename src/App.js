@@ -19,12 +19,10 @@ export default function App() {
   return (
     <div>
       <HashRouter>
-        <Router>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/team/:id" element={<TeamPage />} />
           </Routes>
-        </Router>
       </HashRouter>
     </div>
   );
