@@ -2,7 +2,7 @@
 import React from 'react'
 //import { useState } from 'react';
 
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 /* -------------- Pages -------------- */
 import Home from './pages/Home';
@@ -17,12 +17,10 @@ export default function App() {
 
   return (
     <div>
-      <Router>
         <Routes>
           <Route index element={<Home />} />
           <Route path="/team/:id" element={<TeamPage />} />
         </Routes>
-      </Router>
     </div>
   );
 }
