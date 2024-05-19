@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Sarlota-Duskova/react-learning/static/css/main.9f108cbc.chunk.css",
-    "main.js": "/Sarlota-Duskova/react-learning/static/js/main.dfb1d63d.chunk.js",
-    "main.js.map": "/Sarlota-Duskova/react-learning/static/js/main.dfb1d63d.chunk.js.map",
-    "runtime~main.js": "/Sarlota-Duskova/react-learning/static/js/runtime~main.05599c84.js",
-    "runtime~main.js.map": "/Sarlota-Duskova/react-learning/static/js/runtime~main.05599c84.js.map",
-    "static/js/2.09686b58.chunk.js": "/Sarlota-Duskova/react-learning/static/js/2.09686b58.chunk.js",
-    "static/js/2.09686b58.chunk.js.map": "/Sarlota-Duskova/react-learning/static/js/2.09686b58.chunk.js.map",
-    "static/js/3.68d536b4.chunk.js": "/Sarlota-Duskova/react-learning/static/js/3.68d536b4.chunk.js",
-    "static/js/3.68d536b4.chunk.js.map": "/Sarlota-Duskova/react-learning/static/js/3.68d536b4.chunk.js.map",
-    "index.html": "/Sarlota-Duskova/react-learning/index.html",
-    "precache-manifest.48af289d0ed6ddad3a26972187922c47.js": "/Sarlota-Duskova/react-learning/precache-manifest.48af289d0ed6ddad3a26972187922c47.js",
-    "service-worker.js": "/Sarlota-Duskova/react-learning/service-worker.js",
-    "static/css/main.9f108cbc.chunk.css.map": "/Sarlota-Duskova/react-learning/static/css/main.9f108cbc.chunk.css.map"
+    "main.css": "/react-learning/static/css/main.9f108cbc.chunk.css",
+    "main.js": "/react-learning/static/js/main.9386ae62.chunk.js",
+    "main.js.map": "/react-learning/static/js/main.9386ae62.chunk.js.map",
+    "runtime~main.js": "/react-learning/static/js/runtime~main.9370c5ba.js",
+    "runtime~main.js.map": "/react-learning/static/js/runtime~main.9370c5ba.js.map",
+    "static/js/2.09686b58.chunk.js": "/react-learning/static/js/2.09686b58.chunk.js",
+    "static/js/2.09686b58.chunk.js.map": "/react-learning/static/js/2.09686b58.chunk.js.map",
+    "static/js/3.68d536b4.chunk.js": "/react-learning/static/js/3.68d536b4.chunk.js",
+    "static/js/3.68d536b4.chunk.js.map": "/react-learning/static/js/3.68d536b4.chunk.js.map",
+    "index.html": "/react-learning/index.html",
+    "precache-manifest.abf6d8f7c3df8598016ad2012b2498dc.js": "/react-learning/precache-manifest.abf6d8f7c3df8598016ad2012b2498dc.js",
+    "service-worker.js": "/react-learning/service-worker.js",
+    "static/css/main.9f108cbc.chunk.css.map": "/react-learning/static/css/main.9f108cbc.chunk.css.map"
   }
 }
