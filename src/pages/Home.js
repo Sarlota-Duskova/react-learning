@@ -178,21 +178,31 @@ export default function Home() {
         }
 
         // Update team's players
-        //if (selectedTeam && selectedPlayers.length > 0) {
         const updatedTeams = teams.map(team => {
             if (team.id === selectedTeam.id) {
-                const newPlayers = selectedPlayers.map(player => player.name);
+            const newPlayers = selectedPlayers
+                .filter(player => !team.subelement.includes(player.name)) // Filter out players already in the team
+                .map(player => player.name);
+
+            const skippedPlayers = selectedPlayers.filter(player => team.subelement.includes(player.name));
+            if (skippedPlayers.length > 0) {
+                console.log(`Players ${skippedPlayers.map(p => p.name).join(', ')} are already in team ${team.name}`);
+            } else {
                 console.log(`Adding players ${newPlayers} to team ${team.name}`);
-                return {
+            }
+
+            
+
+            return {
                 ...team,
                 subelement: [...team.subelement, ...newPlayers]
-                };  
+            };  
             } else {
-                // Remove the selected players from other teams
-                return {
-                    ...team,
-                    subelement: team.subelement.filter(player => !selectedPlayers.map(p => p.name).includes(player))
-                };
+            // Remove the selected players from other teams
+            return {
+                ...team,
+                subelement: team.subelement.filter(player => !selectedPlayers.map(p => p.name).includes(player))
+            };
             }
         });
 
