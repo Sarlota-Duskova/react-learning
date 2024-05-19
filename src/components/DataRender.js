@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 //import { useNavigate } from 'react-router-dom';
 
 export default function DataRender(props) {
@@ -28,6 +28,7 @@ export default function DataRender(props) {
             return <span>{props.spanTitle}</span>; // For teams, render the provided spanTitle
         }
     };
+
     const renderSubelement = () => {
         if (props.spanTitle === "Team:") {
             return (
@@ -57,23 +58,30 @@ export default function DataRender(props) {
         }
         
     };
-
-    const handlePhotoChange = (event) => {
-        console.log('onPhotoChange prop:', props.onPhotoChange);
-        const file = event.target.files[0];
-        const reader = new FileReader();
-
-        reader.onload = () => {
-            const imageUrl = reader.result;
-            props.onPhotoChange(props.id, imageUrl);
-          
-            console.log("Updated photo URL:", imageUrl);
-        };
-
-        if (file) {
-            reader.readAsDataURL(file);
+    //const [playerImage, setPlayerImage] = useState(props.image || "https://cdn-icons-png.flaticon.com/512/146/146031.png");
+    //const [photoUrl, setPhotoUrl] = useState(props.image); // Local state to manage the photo URL
+    /*
+    const handlePhotoChange = (newPhotoUrl) => {
+        setPlayerImage(newPhotoUrl);
+        if (props.onPhotoChange) {
+            props.onPhotoChange(newPhotoUrl);
         }
     };
+*/
+    const [photoUrl, setPhotoUrl] = useState(props.image || "https://cdn-icons-png.flaticon.com/512/146/146031.png");
+    const handlePhotoUpload = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onloadend = () => {
+                const newPhotoUrl = reader.result;
+                setPhotoUrl(newPhotoUrl); // Update the local state with the new photo URL
+                props.onPhotoChange(props.id, newPhotoUrl); // Pass the new photo URL to the onPhotoChange function
+            };
+        }
+    };
+
     //const navigate = useNavigate();
 
     const handleButtonClick = () => {
@@ -98,15 +106,23 @@ export default function DataRender(props) {
                             </div>
                     </div>
                     <div className="dataLists--buttons">
-                        <button id="btn" onClick={handleButtonClick}>{props.buttonLists}</button>
+                        {props.buttonLists === "Photo" && (
+                            <>
+                                <button id="btn" onClick={() => document.getElementById(`photo-upload-${props.id}`).click()}>Photo</button>
+                                <input
+                                    id={`photo-upload-${props.id}`}
+                                    type="file"
+                                    accept="image/*"
+                                    style={{ display: 'none' }}
+                                    onChange={(e) => handlePhotoUpload(e)}
+                                />
+                            </>
+                        )}
+                        {props.buttonLists === "Show team" && (
+                            <button id="btn" onClick={handleButtonClick}>Show Team</button>
+                        )}
                         <button id="btn-delete" onClick={handleDelete}>Delete</button>
-                        <input
-                            id={`photo-upload-${props.id}`}
-                            type="file"
-                            accept="image/*"
-                            onChange={handlePhotoChange}
-                            style={{ display: "none" }} 
-                        />
+                        
                     </div>
                 </div>
                

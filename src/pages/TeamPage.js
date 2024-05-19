@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 export default function TeamPage(props){
@@ -13,22 +12,24 @@ export default function TeamPage(props){
   const teamPlayers = players.filter(player => team.subelement.includes(player.name));
 
   return (
-    <div>
-      <h1>{team.name}</h1>
+    <div id="team--container">
+      <h1 id="team--heading">{team.name}</h1>
       {teamPlayers.length > 0 ? (
         <div>
-          <h2>{teamPlayers.length === 1 ? 'Player' : 'Players'}:</h2>
-          <ul>
+          <h2 id="team--playersTitle">{teamPlayers.length === 1 ? 'Player' : 'Players'}:</h2>
+          
+          <div id="team--cardContainer">
             {teamPlayers.map(player => (
-              <li key={player.id}>
-                <div>{player.name}</div>
-                <img src={player.image} alt={player.name} />
-              </li>
+              <div id="team--card">
+                <div id="team--playerName" key={player.id}>{player.name}</div>
+                <img id="team--image" src={player.image} alt={player.name} />
+              </div>
             ))}
-          </ul>
+          </div>
+
         </div>
       ) : (
-        <p>This team does not have assigned players yet.</p>
+        <p id="team--noPlayers">This team does not have assigned players yet.</p>
     )}
     </div>
   )

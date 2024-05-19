@@ -305,15 +305,12 @@ export default function Home() {
             setActivePlayers(newActivePlayers);
         }
     };
+    
 
-
-    const handlePhotoChange = (playerId, imageUrl) => {
-        const updatedPlayers = players.map(player => {
-            if (player.id === playerId) {
-                return { ...player, image: imageUrl };
-            }
-            return player;
-        });
+    const handlePhotoChange = (playerId, newPhotoUrl) => {
+        const updatedPlayers = players.map(player =>
+            player.id === playerId ? { ...player, image: newPhotoUrl } : player
+        );
         setPlayers(updatedPlayers);
     };
 
@@ -330,6 +327,7 @@ export default function Home() {
         <DataRender
             key={player.id}
             name={player.name}
+            id={player.id}
             subelement={player.subelement}
             spanTitle="Team:"
             buttonLists="Photo"
@@ -340,6 +338,7 @@ export default function Home() {
             active={activePlayers[index]}
             image={player.image}
             onPhotoChange={handlePhotoChange}
+            //onPhotoChange={(newPhotoUrl) => handlePhotoChange(player.id, newPhotoUrl)}
         />
     ));
 

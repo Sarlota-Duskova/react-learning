@@ -139,3 +139,158 @@ body {
   color: red;
   margin-top: 5px;
 }
+/* Team Page styling */
+#team--container {
+  margin: auto;
+  padding: 20px;
+}
+
+#team--heading {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+#team--playersTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#team--playerName {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--dark-blue-color);
+}
+
+#team--cardContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#team--card {
+  text-align: center;
+  border: 5px solid var(--dark-blue-color);
+  border-radius: 1rem;
+  padding: 10rem 5rem;
+}
+
+#team--card:hover {
+  box-shadow: 0 24px 38px rgba(0,0,0,0.25), 0 20px 20px rgba(0,0,0,0.22);
+}
+
+#team--image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+#team--noPlayers {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Responsive design */
+/* Tablets and larger phones (landscape) */
+@media only screen and (max-width: 1024px) {
+  .app {
+    flex-direction: column; /* Stack columns vertically */
+  }
+
+  .column {
+    width: 100%; /* Full width */
+    margin-bottom: 20px; /* Space between columns */
+  }
+
+  #team--cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  #team--card {
+    flex-basis: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    padding: 5rem 2rem;
+  }
+
+  #team--image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Phones (landscape) */
+@media only screen and (max-width: 768px) {
+  .app {
+    flex-direction: column; /* Stack columns vertically */
+  }
+
+  .column {
+    width: 100%; /* Full width */
+    margin-bottom: 20px; /* Space between columns */
+  }
+
+  .input-container {
+    flex-direction: column; /* Stack input/button vertically */
+  }
+
+  .input-container input {
+    margin-right: 0; /* No space between input and button */
+    margin-bottom: 10px; /* Space below input */
+  }
+
+  .item-buttons button {
+    width: 100%; /* Full width buttons */
+  }
+
+
+  #team--cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  #team--card {
+    flex-basis: calc(50% - 20px);
+    margin-bottom: 20px;
+    padding: 5rem 2rem; /* Adjust padding for smaller screens */
+  }
+
+  #team--image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Phones (landscape) */
+@media only screen and (max-width: 576px) {
+  .input-container {
+    flex-direction: column; /* Stack input/button vertically */
+  }
+
+  .input-container input {
+    margin-right: 0; /* No space between input and button */
+    margin-bottom: 10px; /* Space below input */
+  }
+
+  .item-buttons button {
+    width: 100%; /* Full width buttons */
+  }
+
+  #team--cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  #team--card {
+    flex-basis: calc(100% - 20px);
+    margin-bottom: 20px;
+    padding: 5rem 2rem; /* Adjust padding for smaller screens */
+  }
+
+  #team--image {
+    width: 150px;
+    height: 150px;
+  }
+}
