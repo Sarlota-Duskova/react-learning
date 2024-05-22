@@ -4,43 +4,43 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 //import { useHistory } from 'react-router-dom';
 
-
 /* ------------ Components ----------- */
 import TeamPlayerInput from '../components/TeamPlayerInput';
 import AddPlayerToTeamButtons from '../components/AddPlayerToTeamButtons';
 import DataRender from '../components/DataRender';
 
 /* -------------- Data --------------- */
-//import dataPlayers from '../data/dataPlayers';
-//import dataTeams from '../data/dataTeams';
+import defaultPlayers from '../data/defaultPlayers';
+import defaultTeams from '../data/defaultTeams';
 
 /* -------------- Pages -------------- */
 //import TeamPage from './pages/TeamPage';
 
 export default function Home() {
     
-
+//TODO Vyresit proc kdyz smazu team uz mi nejde TeamPage
 
     //const [teams, setTeams] = useState([
-    const defaultTeams = [
-        { 
-          id: 0,
-          name: "Slavie Praha",
-          subelement: ["Player 3"]
-        },
-        { 
-          id: 1,
-          name: "Votroci",
-          subelement: ["Player 1", "Player 2"]
-        },
-        { 
-          id: 2,
-          name: "Sparta",
-          subelement: []
-        }
-      ];
+    // const defaultTeams = [
+    //     { 
+    //       id: 0,
+    //       name: "Slavie Praha",
+    //       subelement: ["Player 3"]
+    //     },
+    //     { 
+    //       id: 1,
+    //       name: "Votroci",
+    //       subelement: ["Player 1", "Player 2"]
+    //     },
+    //     { 
+    //       id: 2,
+    //       name: "Sparta",
+    //       subelement: []
+    //     }
+    //   ];
   
       //const [players, setPlayers] = useState([
+        /*
     const defaultPlayers = [
         { 
           id: 0,
@@ -73,6 +73,7 @@ export default function Home() {
           image: "https://cdn-icons-png.flaticon.com/512/146/146031.png"
         }
       ];
+      */
     // Load teams and players data from localStorage, or use default values if not available
     const [teams, setTeams] = useState(() => {
         const storedTeams = localStorage.getItem('teams');
